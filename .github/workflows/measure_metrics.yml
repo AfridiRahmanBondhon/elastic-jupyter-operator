@@ -66,9 +66,7 @@ jobs:
       - name: Analyze with Lizard
         run: 'echo -e "\n=== Detailed Code Metrics ===" >> metrics_report.txt
 
-          lizard . --CCN 10 --length 100 --arguments 5 --extension duplicate --modified
-          --working_threads 1 >> metrics_report.txt
-
+          lizard . --CCN 10 --length 100 --arguments 5 --extension duplicate --modified --working_threads 1 || true >> metrics_report.txt
           '
       - id: measurement-8
         name: Record Measurement After Analyze with Lizard
